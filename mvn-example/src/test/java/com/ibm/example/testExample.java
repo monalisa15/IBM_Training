@@ -52,5 +52,14 @@ public class testExample {
 		assertNotEquals(10, maths.square(3));
 
 	}
+	@Test
+	public void testCube() {
+		assertEquals(216,maths.cube(6));
+	}
+	@Test
+	public void testIncorrectCube()
+	{
+		assertNotEquals(36,maths.cube(7));
+	}
 
 }

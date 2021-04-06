@@ -32,6 +32,10 @@ public class Example {
 		return a*a;
 
 	}
+	public int cube(int a)
+	{
+		return a*a*a;
+	}
 
 
 }
