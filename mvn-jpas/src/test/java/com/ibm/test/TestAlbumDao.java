@@ -38,5 +38,16 @@ public class TestAlbumDao {
 	}
 	
 	
-	
+	@Test
+	public void testUpdate()
+	{
+		Album a = new Album();
+		a.setAlbum_id(1);
+		a.setTitle("Rockstar");
+		a.setGenre("Rock");
+		a.setRating(4.5);
+		assertNotNull(dao.updateAlbum(a));
+		System.out.println(a);	
+		
+	}
 }

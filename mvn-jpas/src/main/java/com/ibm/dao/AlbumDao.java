@@ -11,7 +11,6 @@ public class AlbumDao {
 	
 	private EntityManagerFactory factory;
 	public AlbumDao() {
-		// TODO Auto-generated constructor stub
 		factory = Persistence.createEntityManagerFactory("MyJPA");
 	}
 	
@@ -33,5 +32,16 @@ public class AlbumDao {
 		EntityManager em = factory.createEntityManager();
 		Album a= em.find(Album.class, id);
 		return a;
+	}
+	public Album updateAlbum(Album a)
+	{
+		EntityManager em = factory.createEntityManager();
+		EntityTransaction txn = em.getTransaction();
+		txn.begin();
+		em.merge(a);
+		txn.commit();
+		em.close();
+		return a;			
+		
 	}
 }
